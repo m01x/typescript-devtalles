@@ -1,8 +1,7 @@
 "use strict";
-const msg = 'hola mundo!!!';
-const hero = {
-    name: 'Ironman',
-    age: 45
-};
-hero.age = 40;
-console.log(hero);
+//funcion anonima autoinvocada
+//Una funcion anonmina autoinvocada es una funcion que se ejecuta inmediatamente despues de ser creada.
+(() => {
+    const a = 10;
+    console.log(a);
+})();
