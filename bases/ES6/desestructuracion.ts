@@ -32,4 +32,13 @@
   }
 
   printAvenger(  avengers ); //Aqui mandamos lo que será destructurado
+
+  /**
+   * *Desestructuracion de arreglo
+   * 
+   * const array:string[] = [ 'a', 'b', 'c'];
+   * 
+   * const [ variableA ,, variableC] = array; // Aqui se coloca el nombre, donde quiero guardar el valor de cierta posicion en mi array
+   * Estas comillas ,, son porque no queremos saber la posicion 1 , que corresponde a 'b' , pero hay que respetar la posicion.
+   */
 })()
