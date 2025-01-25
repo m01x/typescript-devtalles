@@ -1,5 +1,31 @@
 "use strict";
 (() => {
+    class Mutante {
+        constructor(name, realName) {
+            this.name = name;
+            this.realName = realName;
+        }
+    }
+    class Xmen extends Mutante {
+        salvarMundo() {
+            return 'Mundo a salvo!';
+        }
+    }
+    class Villain extends Mutante {
+        conquistarMundo() {
+            return 'Mundo Conquistado!';
+        }
+    }
+    const wolverine = new Xmen('Wolverine', 'Logan');
+    const magneto = new Villain('Magneto', 'Magnus');
+    console.log(wolverine.salvarMundo());
+    console.log(magneto.conquistarMundo());
+    const printName = (character) => {
+        console.log(character.realName);
+    };
+    printName(magneto);
+})();
+(() => {
     class Avenger {
         constructor(name, team, realName) {
             this.name = name;
@@ -44,9 +70,30 @@
         getFullNameDesdeXmen() {
             console.log(super.getFullname());
         }
+        get fullName() {
+            return `${this.name} = ${this.realName}`;
+        }
+        set fullName(name) {
+            if (name.length > 3) {
+                throw new Error('El nombre debe ser mayor de 3 letras');
+            }
+            this.name = name;
+        }
     }
     const wolverine = new Xmen('Wolverine', 'Logan', true);
     console.log(wolverine);
     wolverine.getFullNameDesdeXmen();
+    console.log(wolverine.fullName);
+})();
+(() => {
+    class Apocalipsis {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    const apocalipsis1 = new Apocalipsis('Soy Apocalipsis1... el único!');
+    const apocalipsis2 = new Apocalipsis('Soy Apocalipsis2... el único!');
+    const apocalipsis3 = new Apocalipsis('Soy Apocalipsis3... el único!');
+    console.log(apocalipsis1);
 })();
 //# sourceMappingURL=main.js.map

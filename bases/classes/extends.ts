@@ -31,9 +31,29 @@
         console.log( super.getFullname());
     }
 
+
+    /**
+     * * SETTERS Y GETTERS
+     * se pueden llamar iguales, pero se invocan de forma diferente
+     */
+
+    get fullName(){
+      return `${ this.name } = ${ this.realName }`;
+    }
+
+    set fullName( name: string ){
+      if(name.length > 3  ){
+        throw new Error('El nombre debe ser mayor de 3 letras');
+      }
+      this.name = name;
+    }
   }
 
   const wolverine = new Xmen('Wolverine', 'Logan', true);
   console.log(wolverine);
   wolverine.getFullNameDesdeXmen();//🆗
+
+
+  //Llamando al setter y getter
+  console.log( wolverine.fullName );
 })()
